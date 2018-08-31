@@ -1,0 +1,9 @@
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\bin\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.deps.json
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\bin\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.dll
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\bin\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.pdb
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\obj\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.csprojResolveAssemblyReference.cache
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\obj\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.csproj.CoreCompileInputs.cache
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\obj\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.AssemblyInfoInputs.cache
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\obj\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.AssemblyInfo.cs
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\obj\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.dll
+C:\Users\ramon\source\repos\Selenium.MapaCarreira2018\Selenium.MapaCarreira2018.Utilitarios\obj\Debug\netstandard2.0\Selenium.MapaCarreira2018.Utilitarios.pdb
