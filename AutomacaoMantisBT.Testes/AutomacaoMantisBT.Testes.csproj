@@ -116,6 +116,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Base\TestBase.cs" />
+    <Compile Include="Resources\MessagesDeleteBug.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesDeleteBug.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\MessagesNewBug.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesNewBug.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\MessagesUpdateBug.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessagesUpdateBug.resx</DependentUpon>
+    </Compile>
     <Compile Include="TestData\TestDataConfig.cs" />
     <Compile Include="Tests\CreateNewBugTests.cs" />
     <Compile Include="Tests\DeleteBugsTest.cs" />
@@ -138,6 +153,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="extent-config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MessagesDeleteBug.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesDeleteBug.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MessagesNewBug.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesNewBug.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MessagesUpdateBug.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesUpdateBug.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

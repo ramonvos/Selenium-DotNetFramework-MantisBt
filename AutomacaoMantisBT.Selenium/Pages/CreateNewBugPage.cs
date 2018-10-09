@@ -31,6 +31,9 @@ namespace AutomacaoMantisBT.Selenium.Pages
         public IWebElement txtPassos => WebdriverHooks.Driver.FindElement(By.Id("steps_to_reproduce"));
         public IWebElement txtAdicionais => WebdriverHooks.Driver.FindElement(By.Id("additional_info"));
 
+        
+        
+
         public IWebElement txtMarcadores => WebdriverHooks.Driver.FindElement(By.Id("tag_string"));
 
         public IWebElement btnExpandirPerfil => WebdriverHooks.Driver.FindElement(By.XPath("//a[@id='profile_closed_link']/i"));
@@ -51,13 +54,20 @@ namespace AutomacaoMantisBT.Selenium.Pages
         public IWebElement btnSalvar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Criar Nova Tarefa']"));
 
 
-        public IWebElement msgSucesso => WebdriverHooks.Driver.FindElement(By.XPath("//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/p"));
-        
+        public IWebElement msgSucesso => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div[1]/div/div[1]/h4"));
 
+        public IWebElement msgErro => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div/div[2]/p[2]"));
+
+
+        public CreateNewBugPage OpenNewBugPage()
+        {
+            linkCriarTarefa.ClickButton();
+
+            return new CreateNewBugPage();
+        }
         public CreateNewBugPage CreateNewBug(string categoria, string frequencia, string gravidade, string prioridade,bool selecionarPerfil, 
             string plataforma, string so,string versaoSo,string atribuirA, string resumo, string descricao, string passos, string informacoesAdicionais, bool privado, bool continuarRelatando)
         {
-            linkCriarTarefa.ClickButton();
 
             WaitForElementHelpers.WaitForElementDisplayed(locatorDdlCategoria);
             ddlCategoria.SelectText(categoria);
@@ -96,10 +106,18 @@ namespace AutomacaoMantisBT.Selenium.Pages
             //txtEnviarArquivos.SendKeys(@"C:\Users\ramon\source\repos\AutomacaoMantisBT-Ramon\AutomacaoMantisBT.Testes\bin\Debug\TestResult\2018-10-05\ReportTest - sexta-feira, 5 de outubro de 2018.html");
             
 
+
+            return new CreateNewBugPage();
+        }
+
+        public CreateNewBugPage saveNewBug()
+        {
+
             btnSalvar.ClickButton();
 
             return new CreateNewBugPage();
         }
+
         private bool SelecionarPerfilOculto()
         {
             try

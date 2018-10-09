@@ -78,7 +78,7 @@ namespace Selenium.MapaCarreira.Testes.Base
         public void OneTimeTearDown()
         {
             Reporter.GenerateReport();
-            WebdriverHooks.Driver.Quit();
+            //WebdriverHooks.Driver.Quit();
         }
 
       

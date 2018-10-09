@@ -26,7 +26,7 @@ namespace AutomacaoMantisBT.Selenium.Pages
         public IWebElement msgErroLogin => WebdriverHooks.Driver.FindElement(By.XPath("//div[@id='main-container']/div/div/div/div/div[4]"));
 
 
-        public LoginPage NavegarPaginaLogin()
+        public LoginPage NavigateToLoginPage()
         {
             WebdriverHooks.Driver.Manage().Cookies.DeleteAllCookies();
             NavigationHelper.NavigateToPage(ConfigurationManager.AppSettings["URL_BASE"]+ "login_page.php");
