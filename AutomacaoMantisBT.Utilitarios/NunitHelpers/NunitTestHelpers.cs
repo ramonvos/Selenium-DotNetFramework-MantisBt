@@ -32,7 +32,8 @@ namespace AutomacaoMantisBT.Utilitarios.NunitHelpers
 
         public static String GetClassNameTest(int pos)
         {
-            String SuiteName = TestContext.CurrentContext.Test.ClassName;
+            string SuiteName = TestContext.CurrentContext.Test.ClassName;
+            
 
             return SuiteName.Substring(pos);
         }
@@ -41,6 +42,11 @@ namespace AutomacaoMantisBT.Utilitarios.NunitHelpers
         {
             return TestContext.CurrentContext.Result.Outcome.Status;
 
+        }
+
+        public static String GetStackTraceResultTest()
+        {
+            return TestContext.CurrentContext.Result.StackTrace;
         }
 
 

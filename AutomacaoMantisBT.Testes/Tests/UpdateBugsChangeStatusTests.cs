@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Selenium.MapaCarreira.Testes.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Selenium.MapaCarreira.Testes.Tests
 {
-    [TestFixture]
-    public class UpdateBugsChangeStatusTests
+    [TestFixture, Order(4)]
+    public class UpdateBugsChangeStatusTests : TestBase
     {
         [Test, Description("")]
         public void TEST_UpdateBugChangeStatusToNew()

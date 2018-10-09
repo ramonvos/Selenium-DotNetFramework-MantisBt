@@ -4,6 +4,6 @@ using System.Text;
 
 namespace AutomacaoMantisBT.Utilitarios.DependencyInjection
 {
-    //[AttributeUsage(AttributeTargets.Field)]
-    //public class PageObject : Attribute { }
+    [AttributeUsage(AttributeTargets.Field)]
+    public class PageObject : Attribute { }
 }

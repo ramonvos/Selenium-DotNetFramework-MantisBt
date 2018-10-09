@@ -70,7 +70,7 @@
       <HintPath>..\AutomacaoMantisBT.Selenium\bin\Debug\AutomacaoMantisBT.Selenium.dll</HintPath>
     </Reference>
     <Reference Include="AutomacaoMantisBT.Utilitarios">
-      <HintPath>..\AutomacaoMantisBT.Utilitarios\bin\Debug\netstandard2.0\AutomacaoMantisBT2018.Utilitarios.dll</HintPath>
+      <HintPath>..\AutomacaoMantisBT.Utilitarios\bin\Debug\netstandard2.0\AutomacaoMantisBT.Utilitarios.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -116,6 +116,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Base\TestBase.cs" />
+    <Compile Include="TestData\TestDataConfig.cs" />
     <Compile Include="Tests\CreateNewBugTests.cs" />
     <Compile Include="Tests\DeleteBugsTest.cs" />
     <Compile Include="Tests\ListBugsTests.cs" />
@@ -134,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataDriven\" />
-    <Folder Include="TestData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="extent-config.xml" />

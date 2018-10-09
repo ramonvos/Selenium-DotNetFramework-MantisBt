@@ -1,7 +1,8 @@
-﻿using NUnit.Framework;
-using Selenium.MapaCarreira.Testes.Base;
-using AutomacaoMantisBT.Selenium.PageObjectFactory;
+﻿
 using AutomacaoMantisBT.Selenium.Pages;
+using AutomacaoMantisBT.Utilitarios.DependencyInjection;
+using NUnit.Framework;
+using Selenium.MapaCarreira.Testes.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Selenium.MapaCarreira.Testes.Tests
 {
-    [TestFixture]
+    [TestFixture, Order(3)]
     public class ListBugsTests : TestBase
     {
         [PageObject] LoginPage objLogin;
@@ -59,7 +60,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
         }
 
         [Test, Description("")]
-        public void TEST_ListarBugsForStatus()
+        public void TEST_ListBugsForStatus()
         {
 
 

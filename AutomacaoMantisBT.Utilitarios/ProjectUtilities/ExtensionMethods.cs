@@ -4,7 +4,23 @@ using System.Text;
 
 namespace AutomacaoMantisBT.Utilitarios.ProjectUtilities
 {
-    public class ExtensionMethods
+    public static class ExtensionMethods
     {
+        public static bool HasValue(this string value)
+        {
+            if (value != string.Empty)
+            {
+                return true;
+            }
+            else if (value.Trim() != "")
+            {
+                return true;
+            }
+            else if (value == null)
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

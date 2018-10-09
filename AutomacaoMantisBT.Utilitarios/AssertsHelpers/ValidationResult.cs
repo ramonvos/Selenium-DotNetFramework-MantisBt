@@ -5,6 +5,7 @@ using AutomacaoMantisBT.Utilitarios.SeleniumHelpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using AutomacaoMantisBT.Utilitarios.ExtentReport;
 
 namespace AutomacaoMantisBT.Utilitarios.AssertsHelpers
 {
@@ -18,6 +19,7 @@ namespace AutomacaoMantisBT.Utilitarios.AssertsHelpers
                 if (SeleniumGetMethods.GetElement(element))
                 {
                     Assert.That(element.Displayed);
+                    Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute());
                 }
                 
             }
@@ -33,6 +35,7 @@ namespace AutomacaoMantisBT.Utilitarios.AssertsHelpers
             try
             {
                 Assert.That(WebdriverHooks.Driver.FindElement(locator).Displayed);
+                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + locator);
             }
             catch (Exception ex)
             {
@@ -46,6 +49,7 @@ namespace AutomacaoMantisBT.Utilitarios.AssertsHelpers
             try
             {
                 Assert.That(element.Text == text);
+                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute() + " - Valor: "+ text);
             }
             catch (Exception ex)
             {
@@ -59,6 +63,7 @@ namespace AutomacaoMantisBT.Utilitarios.AssertsHelpers
             try
             {
                 Assert.That(element.Text.Contains(text));
+                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute() + " - Valor: " + text);
             }
             catch (Exception ex)
             {
@@ -72,6 +77,7 @@ namespace AutomacaoMantisBT.Utilitarios.AssertsHelpers
             try
             {
                 Assert.That(element.GetAttribute("value") == value);
+                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute());
             }
             catch (Exception ex)
             {
@@ -86,6 +92,7 @@ namespace AutomacaoMantisBT.Utilitarios.AssertsHelpers
             try
             {
                 Assert.False(WebdriverHooks.Driver.FindElement(locator).Displayed);
+                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + locator);
             }
             catch (Exception ex)
             {

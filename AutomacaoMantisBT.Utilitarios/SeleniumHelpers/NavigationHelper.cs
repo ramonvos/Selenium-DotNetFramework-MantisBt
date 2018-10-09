@@ -13,7 +13,7 @@ namespace AutomacaoMantisBT.Utilitarios.SeleniumHelpers
             try
             {
                 WebdriverHooks.Driver.Navigate().GoToUrl(url);
-                Reporter.AddTestInfo("Acessando a página: " + url);
+                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " +"Acessando a página: " + url);
             }
             catch
             {

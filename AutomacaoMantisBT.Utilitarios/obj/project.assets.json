@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "Amr.ImageResizer/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/Amr.dll": {}
+        },
+        "runtime": {
+          "lib/Amr.dll": {}
+        }
+      },
       "Castle.Core/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1540,6 +1549,18 @@
     }
   },
   "libraries": {
+    "Amr.ImageResizer/1.0.0": {
+      "sha512": "FRMEhCZpTfWJTaJ+c42tMrEs0OPmdWz3kQxGeRJ6uR6Ikey4ukYGCW1odfks3RS34Jw6UBq4aoid349/puch2g==",
+      "type": "package",
+      "path": "amr.imageresizer/1.0.0",
+      "files": [
+        "amr.imageresizer.1.0.0.nupkg.sha512",
+        "amr.imageresizer.nuspec",
+        "lib/Amr.dll",
+        "lib/Amr.pdb",
+        "lib/Amr.xml"
+      ]
+    },
     "Castle.Core/4.3.0": {
       "sha512": "HPJ63Q8ilYu7Ts9Kxil6h2Mldegs4uNZWJjPzLedFrFZr34mHnW3w7+y2V1ZN8R1ccve7EcN1CqejIn9Svv2YA==",
       "type": "package",
@@ -5543,6 +5564,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Amr.ImageResizer >= 1.0.0",
       "Castle.Core >= 4.3.0",
       "ExtentReports >= 3.1.3",
       "NETStandard.Library >= 2.0.1",
@@ -5593,6 +5615,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Amr.ImageResizer": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Castle.Core": {
             "target": "Package",
             "version": "[4.3.0, )"
@@ -5669,6 +5695,16 @@
       "warningLevel": 1,
       "message": "ExtentReports 3.1.3 depende de Newtonsoft.Json (>= 9.0.0), mas Newtonsoft.Json 9.0.0 não foi encontrado. A melhor correspondência aproximada de Newtonsoft.Json 9.0.1 foi resolvida.",
       "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'Amr.ImageResizer 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETStandard,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "Amr.ImageResizer",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"
       ]

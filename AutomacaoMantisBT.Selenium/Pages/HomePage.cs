@@ -10,6 +10,6 @@ namespace AutomacaoMantisBT.Selenium.Pages
 {
     public class HomePage
     {
-        public IWebElement btnFind => WebdriverHooks.Driver.FindElement(By.Name("commit"));
+        public IWebElement containerPrincipal => WebdriverHooks.Driver.FindElement(By.Id("main-container"));
     }
 }

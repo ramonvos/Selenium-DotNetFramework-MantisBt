@@ -12,6 +12,7 @@ namespace AutomacaoMantisBT.Utilitarios.SeleniumHelpers
         public static void ClickButton(this IWebElement element)
         {
             SeleniumGetMethods.GetElement(element);
+            Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute());
             element.Click();
 
 
@@ -28,7 +29,7 @@ namespace AutomacaoMantisBT.Utilitarios.SeleniumHelpers
             //}
             //catch (NoSuchElementException ex)
             //{
-            //    Reporter.FailTest(ProjectUtilities.Utilitarios.GetCurrentMethod() + " => " + "ERRO! Elemento esperado não apareceu." + "<pre>" + ex.Message + "</pre>", ex);
+            //    Reporter.FailTest(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "ERRO! Elemento esperado não apareceu." + "<pre>" + ex.Message + "</pre>", ex);
             //    Assert.IsTrue(false);
             //}
 

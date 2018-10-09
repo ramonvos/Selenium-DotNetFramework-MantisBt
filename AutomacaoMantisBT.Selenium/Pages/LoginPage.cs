@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomacaoMantisBT.Utilitarios.ProjectUtilities;
 
 namespace AutomacaoMantisBT.Selenium.Pages
 {
@@ -15,16 +16,20 @@ namespace AutomacaoMantisBT.Selenium.Pages
     {
        
 
-        public IWebElement txtLogin => WebdriverHooks.Driver.FindElement(By.Id("user_email"));
+        public IWebElement txtLogin => WebdriverHooks.Driver.FindElement(By.Id("username"));
 
-        public IWebElement txtPass => WebdriverHooks.Driver.FindElement(By.Id("user_password"));
+        public IWebElement txtPass => WebdriverHooks.Driver.FindElement(By.Id("password"));
 
-        public IWebElement btnLogin => WebdriverHooks.Driver.FindElement(By.Id("btn-login"));
+        public IWebElement btnEntrar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Entrar']"));
 
-        public LoginPage NavegarPaginaInicial()
+        //public IWebElement msgErroLogin => WebdriverHooks.Driver.FindElement(By.XPath("//div[@id='main-container']/div/div/div/div/div[4]/p"));
+        public IWebElement msgErroLogin => WebdriverHooks.Driver.FindElement(By.XPath("//div[@id='main-container']/div/div/div/div/div[4]"));
+
+
+        public LoginPage NavegarPaginaLogin()
         {
-
-            NavigationHelper.NavigateToPage(ConfigurationManager.AppSettings["URL_BASE"]);
+            WebdriverHooks.Driver.Manage().Cookies.DeleteAllCookies();
+            NavigationHelper.NavigateToPage(ConfigurationManager.AppSettings["URL_BASE"]+ "login_page.php");
 
             return new LoginPage();
         }
@@ -34,8 +39,10 @@ namespace AutomacaoMantisBT.Selenium.Pages
             string user = ConfigurationManager.AppSettings["USERNAME"];
             string pass = ConfigurationManager.AppSettings["PASSWORD"];
             txtLogin.TypeInTextBox(user);
+            btnEntrar.ClickButton();
+
             txtPass.TypeInTextBox(pass);
-            btnLogin.ClickButton();
+            btnEntrar.ClickButton();
 
             return new LoginPage();
 
@@ -44,9 +51,17 @@ namespace AutomacaoMantisBT.Selenium.Pages
 
         public LoginPage LogIn(string user, string pass )
         {
+            
             txtLogin.TypeInTextBox(user);
-            txtPass.TypeInTextBox(pass);
-            btnLogin.ClickButton();
+            btnEntrar.ClickButton();
+            if (user.HasValue())
+            {
+                txtPass.TypeInTextBox(pass);
+                btnEntrar.ClickButton();
+            }
+
+        
+
 
             return new LoginPage();
 

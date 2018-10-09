@@ -1,16 +1,15 @@
 ﻿using Castle.DynamicProxy;
 using NUnit.Framework;
-using AutomacaoMantisBT.Selenium.PageObjectFactory;
-using AutomacaoMantisBT.Selenium.Pages;
 using AutomacaoMantisBT.Utilitarios.ExtentReport;
 using AutomacaoMantisBT.Utilitarios.SeleniumBase;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Reflection;
+using AutomacaoMantisBT.Utilitarios.DependencyInjection;
 
 namespace Selenium.MapaCarreira.Testes.Base
 {
-    
+    [SetUpFixture]
     public class TestBase 
     {
         private ProxyGenerator ProxyGenerator;
@@ -22,17 +21,13 @@ namespace Selenium.MapaCarreira.Testes.Base
             this.ProxyGenerator = new ProxyGenerator();
             if (WebdriverHooks.Driver == null)
             {
-                
                 WebdriverHooks.Initialize(ConfigurationManager.AppSettings["Browser"]);
-                
             }
             
             InjectPageObjects(CollectPageObjects(), null);
 
         }
         
-
-      
 
 
         private void InjectPageObjects(List<FieldInfo> fields, IInterceptor proxy)
@@ -75,7 +70,8 @@ namespace Selenium.MapaCarreira.Testes.Base
         public void TearDownTest()
         {
 
-
+            Reporter.WriteTestStatus();
+            Reporter.AddScreenShot();
         }
 
         [OneTimeTearDown]

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Selenium.MapaCarreira.Testes.Tests
 {   
-    [TestFixture]
+    [TestFixture, Order(5)]
     public class UpdateBugsStepsTests : TestBase
     {
         [Test, Description("")]

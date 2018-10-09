@@ -14,21 +14,24 @@ namespace AutomacaoMantisBT.Utilitarios.SeleniumHelpers
         public static bool GetElement(IWebElement element)
         {
             try
-            {
+            {   
+
                 if (element.Displayed || element.Enabled)
                 {
-                    try
-                    {
-                        Reporter.AddTestInfo(ProjectUtilities.Utilitarios.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetAttribute("id"));
-                    }
-                    catch { Reporter.AddTestInfo(ProjectUtilities.Utilitarios.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.ToString()); }
+                    return true;
+                    //try
+                    //{
+                    //    Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute());
+                    //}
+                    //catch { Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.ToString()); }
 
-                }
-                return true;
+                }return false;
+               
             }
             catch (NoSuchElementException ex)
             {
-                Reporter.AddTestInfo(ProjectUtilities.Utilitarios.GetCurrentMethod() + " => " + "ERRO! Elemento esperado não apareceu." + "<pre>" + ex.Message + "</pre>");
+                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "ERRO! Elemento esperado não apareceu." + "<pre>" + ex.Message + "</pre>");
+                Reporter.TestException(ex);
                 Assert.IsTrue(false);
                 return false;
             }
