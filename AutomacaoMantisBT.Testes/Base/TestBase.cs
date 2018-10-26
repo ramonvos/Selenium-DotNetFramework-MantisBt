@@ -1,11 +1,11 @@
 ﻿using Castle.DynamicProxy;
 using NUnit.Framework;
-using AutomacaoMantisBT.Utilitarios.ExtentReport;
-using AutomacaoMantisBT.Utilitarios.SeleniumBase;
+using AutomacaoMantisBT.Utils.ExtentReport;
+using AutomacaoMantisBT.Utils.SeleniumBase;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Reflection;
-using AutomacaoMantisBT.Utilitarios.DependencyInjection;
+using AutomacaoMantisBT.Utils.DependencyInjection;
 
 namespace Selenium.MapaCarreira.Testes.Base
 {

@@ -1,14 +1,14 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using AutomacaoMantisBT.Utilitarios.SeleniumBase;
-using AutomacaoMantisBT.Utilitarios.SeleniumHelpers;
+using AutomacaoMantisBT.Utils.SeleniumBase;
+using AutomacaoMantisBT.Utils.SeleniumHelpers;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutomacaoMantisBT.Utilitarios.ProjectUtilities;
+using AutomacaoMantisBT.Utils.ProjectUtilities;
 
 namespace AutomacaoMantisBT.Selenium.Pages
 {

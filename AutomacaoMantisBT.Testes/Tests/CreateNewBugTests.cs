@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AutomacaoMantisBT.Utilitarios.AssertsHelpers;
-using AutomacaoMantisBT.Utilitarios.DependencyInjection;
+using AutomacaoMantisBT.Utils.AssertsHelpers;
+using AutomacaoMantisBT.Utils.DependencyInjection;
 using AutomacaoMantisBT.Selenium.Pages;
 using AutomacaoMantisBT.Testes.TestData;
-using AutomacaoMantisBT.Utilitarios.SeleniumBase;
-using AutomacaoMantisBT.Utilitarios.SeleniumHelpers;
+using AutomacaoMantisBT.Utils.SeleniumBase;
+using AutomacaoMantisBT.Utils.SeleniumHelpers;
 using AutomacaoMantisBT.Testes.Resources;
+using AutomacaoMantisBT.Utils.WaitHelpers;
 
 namespace Selenium.MapaCarreira.Testes.Tests
 {
@@ -27,6 +28,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
             objLogin.NavigateToLoginPage().LogIn();
             objNewBug.OpenNewBugPage().CreateNewBug(TestDataConfig.categoria, TestDataConfig.frequencia, TestDataConfig.gravidade, TestDataConfig.prioridade, true,"plataforma","SO","VErsao so",TestDataConfig.atribuir, TestDataConfig.resumo, TestDataConfig.descricao, TestDataConfig.passosReproduzir, TestDataConfig.informacoesAdicionais, true, true).saveNewBug();
 
+            WaitForElementHelpers.WaitForElementDisplayed(objNewBug.msgSucessoLocator);
             ValidationResult.AssertTextInElement(objNewBug.msgSucesso, MessagesNewBug.MensagemSucesso);
 
         }

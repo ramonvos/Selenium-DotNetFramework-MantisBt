@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomacaoMantisBT.Utilitarios", "AutomacaoMantisBT.Utilitarios\AutomacaoMantisBT.Utilitarios.csproj", "{A58273F9-24D6-41B5-A0C4-13881B0A6419}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomacaoMantisBT.Testes", "AutomacaoMantisBT.Testes\AutomacaoMantisBT.Testes.csproj", "{676789C9-685E-4108-81C9-866CEDCE3EE1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomacaoMantisBT.Selenium", "AutomacaoMantisBT.Selenium\AutomacaoMantisBT.Selenium.csproj", "{4AF11B5B-2DFC-4DC6-B5CC-87355C1ACE16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomacaoMantisBT.Utils", "AutomacaoMantisBT.Utils\AutomacaoMantisBT.Utils.csproj", "{E4526F63-D713-4EE6-83A4-A6349D8F1A6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A58273F9-24D6-41B5-A0C4-13881B0A6419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A58273F9-24D6-41B5-A0C4-13881B0A6419}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A58273F9-24D6-41B5-A0C4-13881B0A6419}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A58273F9-24D6-41B5-A0C4-13881B0A6419}.Release|Any CPU.Build.0 = Release|Any CPU
 		{676789C9-685E-4108-81C9-866CEDCE3EE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{676789C9-685E-4108-81C9-866CEDCE3EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{676789C9-685E-4108-81C9-866CEDCE3EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{4AF11B5B-2DFC-4DC6-B5CC-87355C1ACE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AF11B5B-2DFC-4DC6-B5CC-87355C1ACE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AF11B5B-2DFC-4DC6-B5CC-87355C1ACE16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4526F63-D713-4EE6-83A4-A6349D8F1A6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4526F63-D713-4EE6-83A4-A6349D8F1A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4526F63-D713-4EE6-83A4-A6349D8F1A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4526F63-D713-4EE6-83A4-A6349D8F1A6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using AutomacaoMantisBT.Utilitarios.SeleniumBase;
+using AutomacaoMantisBT.Utils.SeleniumBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;

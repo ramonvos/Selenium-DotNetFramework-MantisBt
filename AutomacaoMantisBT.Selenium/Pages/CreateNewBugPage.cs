@@ -1,6 +1,6 @@
-﻿using AutomacaoMantisBT.Utilitarios.SeleniumBase;
-using AutomacaoMantisBT.Utilitarios.SeleniumHelpers;
-using AutomacaoMantisBT.Utilitarios.WaitHelpers;
+﻿using AutomacaoMantisBT.Utils.SeleniumBase;
+using AutomacaoMantisBT.Utils.SeleniumHelpers;
+using AutomacaoMantisBT.Utils.WaitHelpers;
 using OpenQA.Selenium;
 
 using System;
@@ -55,6 +55,7 @@ namespace AutomacaoMantisBT.Selenium.Pages
 
 
         public IWebElement msgSucesso => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div[1]/div/div[1]/h4"));
+        public By msgSucessoLocator = By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div[1]/div/div[1]/h4");
 
         public IWebElement msgErro => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div/div[2]/p[2]"));
 
