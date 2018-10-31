@@ -11,7 +11,7 @@ namespace AutomacaoMantisBT.Selenium.Pages
 {
     public class DeleteBugSPage
     {
-        public IWebElement linkVerTarefas => WebdriverHooks.Driver.FindElement(By.LinkText("Ver Tarefas"));
+        public IWebElement linkVerTarefas => WebdriverHooks.Driver.FindElement(By.LinkText("View Issues"));
 
         public IWebElement ckSelecionarBug => WebdriverHooks.Driver.FindElement(By.XPath("//table[@id='buglist']/tbody/tr/td/div/label/span"));
 
@@ -22,9 +22,9 @@ namespace AutomacaoMantisBT.Selenium.Pages
 
         public IWebElement btnOk => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='OK']"));
 
-        public IWebElement btnConfirmar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Apagar Tarefas']"));
+        public IWebElement btnConfirmar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Delete Issues']"));
 
-        public IWebElement btnApagar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Apagar']"));
+        public IWebElement btnApagar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Delete']"));
 
         public IWebElement msgSucesso => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='bug_action']/div/div[1]/h4"));
         public DeleteBugSPage OpenViewTask()
@@ -35,7 +35,7 @@ namespace AutomacaoMantisBT.Selenium.Pages
 
         public DeleteBugSPage DeleteBugFromList()
         {
-            string action = "Apagar";
+            string action = "Delete";
             
             
 

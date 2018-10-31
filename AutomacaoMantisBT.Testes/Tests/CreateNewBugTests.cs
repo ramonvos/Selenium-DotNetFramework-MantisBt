@@ -73,7 +73,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
             objNewBug.saveNewBug();
 
             ValidationResult.AssertElementContainsText(objNewBug.msgErro, MessagesNewBug.MensagemErroObrigatoriedade.Replace("@campo", "description"));
-
+            //A necessary field "description" was empty. Please recheck your inputs.
         }
 
 

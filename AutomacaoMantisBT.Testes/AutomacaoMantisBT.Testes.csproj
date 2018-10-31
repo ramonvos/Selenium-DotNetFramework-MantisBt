@@ -140,7 +140,9 @@
     <Compile Include="Tests\UpdateBugsStepsTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="license" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

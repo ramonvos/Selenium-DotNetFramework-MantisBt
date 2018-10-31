@@ -7,6 +7,7 @@ using System.Text;
 using AutomacaoMantisBT.Utils.NunitHelpers;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Remote;
 
 namespace AutomacaoMantisBT.Utils.SeleniumBase
 {
@@ -16,30 +17,54 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
 
         public static string UrlBase { get; set; }
 
+        public static bool RemoteDriver = false;
+
         static WebdriverHooks()
         {
             Driver = null;
         }
 
+
+
         public static void Initialize(String browser)
         {
-
-            if (browser.Equals("Firefox"))
+            if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
             {
-                Driver = GetFirefoxDriver();
+                if (ConfigurationManager.AppSettings["BROWSER"].Equals("chrome"))
+                {
+
+
+                    ChromeOptions options = new ChromeOptions();
+                    options.AddArguments("start-maximized");
+                    options.AddArguments("lang=en-US");
+                    
+                    Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), options.ToCapabilities(), TimeSpan.FromSeconds(300));
+
+
+                }
+
+
 
             }
-            else if (browser.Equals("Chrome"))
+            else 
             {
-                Driver = GetChromeDriver();
 
-            }
-            else if (browser.Equals("InternetExplorer"))
-            {
-                Driver = GetIEDriver();
+                if (browser.Equals("firefox"))
+                {
+                    Driver = GetFirefoxDriver();
 
+                }
+                else if (browser.Equals("chrome"))
+                {
+                    Driver = GetChromeDriver();
+
+                }
+                else if (browser.Equals("ie"))
+                {
+                    Driver = GetIEDriver();
+
+                }
             }
-        
 
             // Initialize base URL and maximize browser
             UrlBase = ConfigurationManager.AppSettings["URL_BASE"];
@@ -60,7 +85,8 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
 
         private static IWebDriver GetChromeDriver()
         {
-            IWebDriver driver = new ChromeDriver();
+            
+            IWebDriver driver = new ChromeDriver(GetChromeOptions());
             return driver;
         }
 
@@ -69,6 +95,22 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
             IWebDriver driver = new InternetExplorerDriver();
             return driver;
         }
+
+
+        private static ChromeOptions GetChromeOptions()
+        {
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("--start-maximized");
+            options.AddArguments("lang=en-US");
+            if (ConfigurationManager.AppSettings["CHROME_HEADLESS"].Equals("true"))
+            {
+                options.AddArguments("--headless");
+            }
+
+            return options;
+        }
+
+
 
         
         public static void Quit()

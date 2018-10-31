@@ -9,10 +9,10 @@ namespace AutomacaoMantisBT.Testes.TestData
     public static class TestDataConfig
     {
 
-        public static string categoria = "[Todos os Projetos] General";
-        public static string frequencia = "sempre";
-        public static string gravidade = "grande";
-        public static string prioridade = "urgente";
+        public static string categoria = "[All Projects] General";
+        public static string frequencia = "sometimes";
+        public static string gravidade = "minor";
+        public static string prioridade = "urgent";
         public static string atribuir = "administrator";
         public static string resumo = "resumo";
         public static string descricao = "descricao";

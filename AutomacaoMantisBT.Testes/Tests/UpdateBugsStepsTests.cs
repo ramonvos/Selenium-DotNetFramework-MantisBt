@@ -46,7 +46,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
 
             objUpdBug.ClickSaveUpdate();
 
-            ValidationResult.AssertElementContainsText(objNewBug.msgErro, MessagesUpdateBug.MensagemErroObrigatoriedade.Replace("@campo","Resumo"));
+            ValidationResult.AssertElementContainsText(objNewBug.msgErro, MessagesUpdateBug.MensagemErroObrigatoriedade.Replace("@campo", "Summary"));
 
 
         }
@@ -62,7 +62,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
 
             objUpdBug.ClickSaveUpdate();
 
-            ValidationResult.AssertElementContainsText(objNewBug.msgSucesso, MessagesUpdateBug.MensagemErroObrigatoriedade.Replace("@campo", "Resumo"));
+            ValidationResult.AssertElementContainsText(objNewBug.msgSucesso, MessagesUpdateBug.MensagemErroObrigatoriedade.Replace("@campo", "Description"));
 
         }
 

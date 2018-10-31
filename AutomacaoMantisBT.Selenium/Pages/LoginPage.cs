@@ -20,7 +20,7 @@ namespace AutomacaoMantisBT.Selenium.Pages
 
         public IWebElement txtPass => WebdriverHooks.Driver.FindElement(By.Id("password"));
 
-        public IWebElement btnEntrar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Entrar']"));
+        public IWebElement btnEntrar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Login']"));
 
         //public IWebElement msgErroLogin => WebdriverHooks.Driver.FindElement(By.XPath("//div[@id='main-container']/div/div/div/div/div[4]/p"));
         public IWebElement msgErroLogin => WebdriverHooks.Driver.FindElement(By.XPath("//div[@id='main-container']/div/div/div/div/div[4]"));

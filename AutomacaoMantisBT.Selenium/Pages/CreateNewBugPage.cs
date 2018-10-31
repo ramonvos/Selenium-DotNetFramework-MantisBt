@@ -14,7 +14,7 @@ namespace AutomacaoMantisBT.Selenium.Pages
     public class CreateNewBugPage
     {   
         public const String url = "";
-        public IWebElement linkCriarTarefa => WebdriverHooks.Driver.FindElement(By.LinkText("Criar Tarefa"));
+        public IWebElement linkCriarTarefa => WebdriverHooks.Driver.FindElement(By.LinkText("Report Issue"));
 
 
         public IWebElement ddlCategoria => WebdriverHooks.Driver.FindElement(By.Id("category_id"));
@@ -51,11 +51,11 @@ namespace AutomacaoMantisBT.Selenium.Pages
         public IWebElement ckContinuarRelatando => WebdriverHooks.Driver.FindElement(By.XPath("//form[@id='report_bug_form']/div/div[2]/div/div/table/tbody/tr[14]/td/label/span"));
 
 
-        public IWebElement btnSalvar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Criar Nova Tarefa']"));
+        public IWebElement btnSalvar => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Submit Issue']"));
 
 
-        public IWebElement msgSucesso => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div[1]/div/div[1]/h4"));
-        public By msgSucessoLocator = By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div[1]/div/div[1]/h4");
+        public IWebElement msgSucesso => WebdriverHooks.Driver.FindElement(By.XPath("//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/p"));
+        public By msgSucessoLocator = By.XPath("//div[@id='main-container']/div[2]/div[2]/div/div/div/div[2]/p");
 
         public IWebElement msgErro => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='main-container']/div[2]/div[2]/div/div/div[2]/p[2]"));
 

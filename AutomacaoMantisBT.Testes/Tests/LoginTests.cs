@@ -33,7 +33,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
         {
             objLogin.NavigateToLoginPage().LogIn("teste", "teste");
 
-            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.");
+            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
         }
 
         [Test, Description("Testa realizar login informando login invalido e validar se foi exibido mensagem de validação.")]
@@ -41,7 +41,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
         {
             objLogin.NavigateToLoginPage().LogIn("teste", "teste");
 
-            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.");
+            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
         }
 
         [Test, Description("Testa realizar login informando senha invalida e validar se foi exibido mensagem de validação.")]
@@ -49,7 +49,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
         {
             objLogin.NavigateToLoginPage().LogIn("", string.Empty);
 
-            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.");
+            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
         }
 
         [Test, Description("Testa realizar login sem informar login e validar se foi exibido mensagem de validação.")]
@@ -57,7 +57,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
         {
             objLogin.NavigateToLoginPage().LogIn("", string.Empty);
 
-            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.");
+            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
         }
 
         [Test, Description("Testa realizar login sem informar senha e validar se foi exibido mensagem de validação.")]
@@ -65,7 +65,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
         {
             objLogin.NavigateToLoginPage().LogIn("teste", "");
 
-            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.");
+            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
         }
 
         [Test, Description("Testa realizar login sem informar login e senha e validar se foi exibido mensagem de validação.")]
@@ -73,7 +73,7 @@ namespace Selenium.MapaCarreira.Testes.Tests
         {
             objLogin.NavigateToLoginPage().LogIn("", "");
 
-            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Sua conta pode estar desativada ou bloqueada ou o nome de usuário e a senha que você digitou não estão corretos.");
+            ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
 
         }
     }

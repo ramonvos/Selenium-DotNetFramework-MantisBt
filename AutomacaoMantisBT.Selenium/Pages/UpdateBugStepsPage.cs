@@ -13,11 +13,11 @@ namespace AutomacaoMantisBT.Selenium.Pages
     public class UpdateBugStepsPage
     {   
 
-        public IWebElement linkVerTarefas => WebdriverHooks.Driver.FindElement(By.LinkText("Ver Tarefas"));
+        public IWebElement linkVerTarefas => WebdriverHooks.Driver.FindElement(By.LinkText("View Issues"));
 
         public IWebElement btnUpdateBug => WebdriverHooks.Driver.FindElement(By.XPath("//*[@id='buglist']/tbody/tr[1]/td[2]"));
 
-        public IWebElement btnSave => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Atualizar Informação']"));
+        public IWebElement btnSave => WebdriverHooks.Driver.FindElement(By.XPath("//input[@value='Update Information']"));
 
         public IWebElement ddlCategoria => WebdriverHooks.Driver.FindElement(By.Id("category_id"));
 
