@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutomacaoMantisBT.Utils.ProjectUtilities;
+using AutomacaoMantisBT.Selenium.ExcelDataDriven;
 
 namespace AutomacaoMantisBT.Selenium.Pages
 {
@@ -68,6 +69,28 @@ namespace AutomacaoMantisBT.Selenium.Pages
 
         }
 
-      
+        public LoginPage LogInDataDriven(string key)
+        {
+            String fileName = ConfigurationManager.AppSettings["TestDataSheetPath"];
+
+            ExcelUtil util = new ExcelUtil();
+        
+            util.PopulateInCollection(fileName);
+
+            String userName = util.ReadData(2, "Column0");//Login
+            String pass = util.ReadData(2, "Column1");//senha 01
+
+            txtLogin.TypeInTextBox(userName);
+            btnEntrar.ClickButton();
+
+            txtPass.TypeInTextBox(pass);
+            btnEntrar.ClickButton();
+
+            return new LoginPage();
+
+
+        }
+
+
     }
 }

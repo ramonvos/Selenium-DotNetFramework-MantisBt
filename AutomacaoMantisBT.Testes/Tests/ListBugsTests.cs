@@ -1,5 +1,6 @@
 ﻿
 using AutomacaoMantisBT.Selenium.Pages;
+using AutomacaoMantisBT.Utils.AssertsHelpers;
 using AutomacaoMantisBT.Utils.DependencyInjection;
 using NUnit.Framework;
 using Selenium.MapaCarreira.Testes.Base;
@@ -15,12 +16,16 @@ namespace Selenium.MapaCarreira.Testes.Tests
     public class ListBugsTests : TestBase
     {
         [PageObject] LoginPage objLogin;
+        [PageObject] ListBugPage objList;
 
         [Test, Description("")]
         public void TEST_ListAllBugs()
         {
+            objLogin.NavigateToLoginPage().LogIn();
 
-            
+            objList.ClickIssueDetails();
+
+            ValidationResult.AssertTextInElement(objList.bugId, ListBugPage.selectBug);
         }
 
         [Test, Description("")]

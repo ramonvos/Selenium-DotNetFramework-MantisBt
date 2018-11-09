@@ -1,0 +1,4 @@
+summary;description;steps_to_reproduce;additional_info
+Erro 500 ao clicar em salvar;Sistema apresenta erro 500 ao clicar no botão salvar;Clicar em salvar sem preencher todos os campos obrigatórios;Realizar login com administrador
+Erro ao selecionar opção voltar;Ao clicar no botão voltar sistema apresenta erro 404;Clicar no botão voltar;Realizar login com administrador
+Label incorreto na visualização de detalhes;Sistema apresenta label com erro ortográfico na visualização de detalhes;Acessar a tela de detalhes;Realizar login com administrador

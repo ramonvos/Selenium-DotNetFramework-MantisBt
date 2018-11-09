@@ -136,8 +136,13 @@
     <Compile Include="Tests\DeleteBugsTest.cs" />
     <Compile Include="Tests\ListBugsTests.cs" />
     <Compile Include="Tests\LoginTests.cs" />
+    <Compile Include="Tests\ManageCustomFieldsTests.cs" />
+    <Compile Include="Tests\ManageProjectsTests.cs" />
+    <Compile Include="Tests\ManageTagsTests.cs" />
+    <Compile Include="Tests\ManageUsersTests.cs" />
     <Compile Include="Tests\UpdateBugsChangeStatusTests.cs" />
     <Compile Include="Tests\UpdateBugsStepsTests.cs" />
+    <Compile Include="Tests\ViewBugDetailsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

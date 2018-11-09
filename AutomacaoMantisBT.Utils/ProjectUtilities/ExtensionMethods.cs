@@ -22,5 +22,15 @@ namespace AutomacaoMantisBT.Utils.ProjectUtilities
             }
             else return false;
         }
+
+        public static String StringRandom(this List<string> values)
+        {
+            string randomValue = string.Empty;
+            Random rnd = new Random();
+            int aux = values.Count;
+
+            int value = rnd.Next(aux);
+            return randomValue = values[value];
+        } 
     }
 }

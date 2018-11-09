@@ -76,5 +76,16 @@ namespace Selenium.MapaCarreira.Testes.Tests
             ValidationResult.AssertTextInElement(objLogin.msgErroLogin, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
 
         }
+
+        [Test, Description("Testar realizar login informando dados validados e validar se foi exibido a página inicial")]
+        
+        public void TEST_LoginSuccessDataDriven()
+        {
+
+            objLogin.NavigateToLoginPage().LogInDataDriven("LogInTest");
+
+            ValidationResult.AssertElementDisplayed(objHome.containerPrincipal);
+        }
+
     }
 }

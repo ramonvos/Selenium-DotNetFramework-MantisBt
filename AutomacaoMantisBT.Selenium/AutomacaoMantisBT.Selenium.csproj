@@ -33,10 +33,20 @@
     <Reference Include="AutomacaoMantisBT.Utils">
       <HintPath>..\AutomacaoMantisBT.Utils\bin\Debug\AutomacaoMantisBT.Utils.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.4.2\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.4.2\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,9 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcelDataDriven\ExcelDataAccess.cs" />
+    <Compile Include="ExcelDataDriven\ExcelUtil.cs" />
+    <Compile Include="ExcelDataDriven\UserData.cs" />
     <Compile Include="Pages\CreateNewBugPage.cs" />
     <Compile Include="Pages\DeleteBugSPage.cs" />
     <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\ListBugPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\UpdateBugStepsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

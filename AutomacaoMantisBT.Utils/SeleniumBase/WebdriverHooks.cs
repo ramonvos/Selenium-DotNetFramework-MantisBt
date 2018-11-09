@@ -28,43 +28,58 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
 
         public static void Initialize(String browser)
         {
-            if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
+
+            switch (browser)
             {
-                if (ConfigurationManager.AppSettings["BROWSER"].Equals("chrome"))
-                {
-
-
-                    ChromeOptions options = new ChromeOptions();
-                    options.AddArguments("start-maximized");
-                    options.AddArguments("lang=en-US");
-                    
-                    Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), options.ToCapabilities(), TimeSpan.FromSeconds(300));
-
-
-                }
-
-
-
-            }
-            else 
-            {
-
-                if (browser.Equals("firefox"))
-                {
-                    Driver = GetFirefoxDriver();
-
-                }
-                else if (browser.Equals("chrome"))
-                {
+                case "chrome":
                     Driver = GetChromeDriver();
-
-                }
-                else if (browser.Equals("ie"))
-                {
+                    break;
+                case "firefox":
+                    Driver = GetFirefoxDriver();
+                    break;
+                case "internetexplorer":
                     Driver = GetIEDriver();
-
-                }
+                    break;
             }
+
+
+            //if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
+            //{
+
+            //    switch (browser)
+            //    {
+            //        case "chrome":
+
+
+            //            break;
+            //        case "firefox":
+            //            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            //            Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), firefoxOptions.ToCapabilities(), TimeSpan.FromSeconds(300));
+            //            break;
+            //        case "internetexplorer":
+
+            //            break;
+            //    }
+
+            //}
+            //else
+            //{
+
+            //    switch (browser)
+            //    {
+            //        case "chrome":
+            //            Driver = GetChromeDriver();
+            //            break;
+            //        case "firefox":
+            //            Driver = GetFirefoxDriver();
+            //            break;
+            //        case "internetexplorer":
+            //            Driver = GetIEDriver();
+            //            break;
+            //    }
+
+
+            //}
 
             // Initialize base URL and maximize browser
             UrlBase = ConfigurationManager.AppSettings["URL_BASE"];
@@ -79,21 +94,46 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
 
         private static IWebDriver GetFirefoxDriver()
         {
-            IWebDriver driver = new FirefoxDriver(pathFirefoxDriver);
-            return driver;
+
+            if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
+            {
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                return Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), firefoxOptions.ToCapabilities(), TimeSpan.FromSeconds(300));
+            }
+
+            FirefoxDriverService service = FirefoxDriverService.CreateDefaultService(pathFirefoxDriver);
+            FirefoxOptions options = new FirefoxOptions();
+            options.BrowserExecutableLocation = @"C:\Program Files\Mozilla Firefox\firefox.exe";
+            options.SetPreference("intl.accept_languages", "en-us");
+
+            return Driver = new FirefoxDriver(service, options, TimeSpan.FromMinutes(1));
+
         }
 
         private static IWebDriver GetChromeDriver()
         {
-            
-            IWebDriver driver = new ChromeDriver(GetChromeOptions());
-            return driver;
+            if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
+            {
+                ChromeOptions options = new ChromeOptions();
+                options.AddArguments("start-maximized");
+                options.AddArguments("lang=en-US");
+                return Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), options.ToCapabilities(), TimeSpan.FromSeconds(300));
+            }
+            return Driver = new ChromeDriver(GetChromeOptions());
+
         }
 
         private static IWebDriver GetIEDriver()
         {
-            IWebDriver driver = new InternetExplorerDriver();
-            return driver;
+            if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
+            {
+                InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+                return Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), ieOptions.ToCapabilities(), TimeSpan.FromSeconds(300));
+            }
+            
+            
+            return Driver = new InternetExplorerDriver(pathFirefoxDriver);
+
         }
 
 
@@ -110,15 +150,17 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
             return options;
         }
 
+      
 
 
-        
+
+
         public static void Quit()
         {
             Driver.Quit();
         }
 
-     
+
 
     }
 }
