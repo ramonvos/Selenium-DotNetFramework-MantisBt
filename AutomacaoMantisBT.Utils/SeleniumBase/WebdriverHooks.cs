@@ -42,45 +42,7 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
                     break;
             }
 
-
-            //if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
-            //{
-
-            //    switch (browser)
-            //    {
-            //        case "chrome":
-
-
-            //            break;
-            //        case "firefox":
-            //            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            //            Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), firefoxOptions.ToCapabilities(), TimeSpan.FromSeconds(300));
-            //            break;
-            //        case "internetexplorer":
-
-            //            break;
-            //    }
-
-            //}
-            //else
-            //{
-
-            //    switch (browser)
-            //    {
-            //        case "chrome":
-            //            Driver = GetChromeDriver();
-            //            break;
-            //        case "firefox":
-            //            Driver = GetFirefoxDriver();
-            //            break;
-            //        case "internetexplorer":
-            //            Driver = GetIEDriver();
-            //            break;
-            //    }
-
-
-            //}
-
+            
             // Initialize base URL and maximize browser
             UrlBase = ConfigurationManager.AppSettings["URL_BASE"];
 
@@ -113,12 +75,13 @@ namespace AutomacaoMantisBT.Utils.SeleniumBase
         private static IWebDriver GetChromeDriver()
         {
             if (ConfigurationManager.AppSettings["REMOTE_DRIVER"].Equals("true"))
-            {
+            {   //RUN REMOTE
                 ChromeOptions options = new ChromeOptions();
                 options.AddArguments("start-maximized");
                 options.AddArguments("lang=en-US");
                 return Driver = new RemoteWebDriver(new Uri(ConfigurationManager.AppSettings["URL_REMOTE"]), options.ToCapabilities(), TimeSpan.FromSeconds(300));
             }
+            //RUN LOCAL
             return Driver = new ChromeDriver(GetChromeOptions());
 
         }

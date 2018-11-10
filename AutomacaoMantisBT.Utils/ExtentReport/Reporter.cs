@@ -44,7 +44,7 @@ namespace AutomacaoMantisBT.Utils.ExtentReport
         {
             string testName = NunitTestHelpers.GetTestCaseName(); // Get Test Name
             string testDescription = NunitTestHelpers.GetTestDescription(); // Get  Test Description
-            string testCategory = NunitTestHelpers.GetClassNameTest(35); //Get Class name - Subtring para ignorar o nome da solution
+            string testCategory = NunitTestHelpers.GetClassNameTest(31); //Get Class name - Subtring para ignorar o nome da solution
 
             _test = _extent.CreateTest(testName, testDescription).AssignCategory(testCategory);
         }

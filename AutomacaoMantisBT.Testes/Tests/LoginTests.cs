@@ -6,7 +6,7 @@ using AutomacaoMantisBT.Utils.DependencyInjection;
 using AutomacaoMantisBT.Selenium.Pages;
 using System.Configuration;
 
-namespace Selenium.MapaCarreira.Testes.Tests
+namespace AutomacaoMantisBT.Testes.Tests
 {
     [TestFixture, Order(1)]
     public class LoginTests : TestBase

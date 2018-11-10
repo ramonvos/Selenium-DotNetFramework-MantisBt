@@ -14,7 +14,7 @@ using AutomacaoMantisBT.Utils.SeleniumHelpers;
 using AutomacaoMantisBT.Testes.Resources;
 using AutomacaoMantisBT.Utils.WaitHelpers;
 
-namespace Selenium.MapaCarreira.Testes.Tests
+namespace AutomacaoMantisBT.Testes.Tests
 {
     [TestFixture,Order(2)]
     public class CreateNewBugTests : TestBase

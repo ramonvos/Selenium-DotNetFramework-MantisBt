@@ -15,23 +15,7 @@ namespace AutomacaoMantisBT.Utils.SeleniumHelpers
             Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute());
             element.Click();
 
-
-
-
-            //try
-            //{
-            //    if (SeleniumGetMethods.GetElement(element))
-            //    {
-            //        element.Click();
-            //    }
-            //    else { Reporter.AddTestInfo("Valor preenchido: Nulo/Vazio"); }
-
-            //}
-            //catch (NoSuchElementException ex)
-            //{
-            //    Reporter.FailTest(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "ERRO! Elemento esperado não apareceu." + "<pre>" + ex.Message + "</pre>", ex);
-            //    Assert.IsTrue(false);
-            //}
+            
 
 
         }

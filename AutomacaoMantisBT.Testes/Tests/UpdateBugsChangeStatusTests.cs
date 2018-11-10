@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Selenium.MapaCarreira.Testes.Tests
+namespace AutomacaoMantisBT.Testes.Tests
 {
     [TestFixture, Order(4)]
     public class UpdateBugsChangeStatusTests : TestBase

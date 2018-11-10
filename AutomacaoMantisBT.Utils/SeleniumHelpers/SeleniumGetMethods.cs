@@ -19,12 +19,7 @@ namespace AutomacaoMantisBT.Utils.SeleniumHelpers
                 if (element.Displayed || element.Enabled)
                 {
                     return true;
-                    //try
-                    //{
-                    //    Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute());
-                    //}
-                    //catch { Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.ToString()); }
-
+                   
                 }return false;
                
             }
