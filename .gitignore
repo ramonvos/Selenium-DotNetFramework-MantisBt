@@ -4,5 +4,8 @@
 
 /.vs
 /AutomacaoMantisBT.Selenium/bin/Debug
+/AutomacaoMantisBT.Selenium/obj/Debug
 /AutomacaoMantisBT.Testes/bin/Debug
+/AutomacaoMantisBT.Testes/obj/Debug
 /AutomacaoMantisBT.Utils/bin/Debug
+/AutomacaoMantisBT.Utils/obj/Debug
