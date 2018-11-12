@@ -39,9 +39,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutomacaoMantisBT.Utils">
-      <HintPath>..\AutomacaoMantisBT.Utils\bin\Debug\AutomacaoMantisBT.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.4.3.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
@@ -68,9 +65,6 @@
     </Reference>
     <Reference Include="RazorEngine, Version=3.9.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
       <HintPath>..\packages\RazorEngine.3.9.0\lib\net45\RazorEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="AutomacaoMantisBT.Selenium">
-      <HintPath>..\AutomacaoMantisBT.Selenium\bin\Debug\AutomacaoMantisBT.Selenium.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -174,6 +168,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MessagesUpdateBug.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutomacaoMantisBT.Selenium\AutomacaoMantisBT.Selenium.csproj">
+      <Project>{4af11b5b-2dfc-4dc6-b5cc-87355c1ace16}</Project>
+      <Name>AutomacaoMantisBT.Selenium</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutomacaoMantisBT.Utils\AutomacaoMantisBT.Utils.csproj">
+      <Project>{e4526f63-d713-4ee6-83a4-a6349d8f1a6c}</Project>
+      <Name>AutomacaoMantisBT.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
