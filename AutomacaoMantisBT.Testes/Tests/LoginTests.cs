@@ -5,6 +5,7 @@ using AutomacaoMantisBT.Utils.AssertsHelpers;
 using AutomacaoMantisBT.Utils.DependencyInjection;
 using AutomacaoMantisBT.Selenium.Pages;
 using System.Configuration;
+using AutomacaoMantisBT.Utils.ProjectUtilities;
 
 namespace AutomacaoMantisBT.Testes.Tests
 {
@@ -19,6 +20,8 @@ namespace AutomacaoMantisBT.Testes.Tests
         [Test, Description("Testar realizar login informando dados validados e validar se foi exibido a página inicial")]
         public void TEST_LoginSuccess()
         {
+            DatabaseConnection db = new DatabaseConnection();
+            db.OpenConnection();
             string login = ConfigurationManager.AppSettings["USERNAME"];
             string senha = ConfigurationManager.AppSettings["PASSWORD"];
 
