@@ -27,8 +27,12 @@ namespace AutomacaoMantisBT.Utils.ProjectUtilities
 
                 string stm = "SELECT * FROM MASSA_TESTES";
                 MySqlCommand cmd = new MySqlCommand(stm, objConn);
-
-                Object dados = cmd.ExecuteNonQuery();
+                MySqlDataReader reader = cmd.ExecuteReader();
+              
+                while (reader.Read())
+                {
+                    string value = reader.ToString();
+                }
 
                 objConn.Close();
             }
