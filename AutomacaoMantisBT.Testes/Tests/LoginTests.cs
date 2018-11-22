@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-using Selenium.MapaCarreira.Testes.Base;
+using AutomacaoMantisBT.Testes.Base;
 using AutomacaoMantisBT.Utils.AssertsHelpers;
 using AutomacaoMantisBT.Utils.DependencyInjection;
 using AutomacaoMantisBT.Selenium.Pages;

@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Reflection;
 using AutomacaoMantisBT.Utils.DependencyInjection;
 
-namespace Selenium.MapaCarreira.Testes.Base
+namespace AutomacaoMantisBT.Testes.Base
 {
     [SetUpFixture]
     public class TestBase 

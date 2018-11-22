@@ -2,7 +2,7 @@
 using AutomacaoMantisBT.Utils.AssertsHelpers;
 using AutomacaoMantisBT.Utils.DependencyInjection;
 using NUnit.Framework;
-using Selenium.MapaCarreira.Testes.Base;
+using AutomacaoMantisBT.Testes.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
