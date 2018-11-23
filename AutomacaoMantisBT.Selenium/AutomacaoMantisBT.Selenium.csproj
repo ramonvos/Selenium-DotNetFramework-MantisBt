@@ -66,10 +66,13 @@
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\ListBugPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\ManageProjectsPage.cs" />
+    <Compile Include="Pages\ManageUsersPage.cs" />
     <Compile Include="Pages\UpdateBugStepsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
