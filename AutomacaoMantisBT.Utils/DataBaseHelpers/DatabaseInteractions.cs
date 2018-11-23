@@ -56,17 +56,21 @@ namespace AutomacaoMantisBT.Utils.DataBaseHelpers
 
         public List<string> retornaDadosQuery(String query)
         {
+            conn = GetDBConnection();
+            
             DataSet ds = new DataSet();
             List<string> lista = new List<string>();
 
+
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.CommandTimeout = Int32.Parse(ConfigurationManager.AppSettings["DBConnectionTimeout"]);
+            conn.Open();
             MySqlDataReader rdr = cmd.ExecuteReader();
 
-            conn.Open();
+            
 
             DataTable table = new DataTable();
-            table.Load(cmd.ExecuteReader());
+            table.Load(rdr);
             ds.Tables.Add(table);
             cmd.Connection.Close();
 
@@ -97,16 +101,17 @@ namespace AutomacaoMantisBT.Utils.DataBaseHelpers
 
             DataSet ds = new DataSet();
             List<string> lista = new List<string>();
-
+            conn = GetDBConnection();
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.CommandTimeout = Int32.Parse(ConfigurationManager.AppSettings["DBConnectionTimeout"]);
 
-            MySqlDataReader rdr = cmd.ExecuteReader();
+            
 
             cmd.Connection.Open();
 
+            MySqlDataReader rdr = cmd.ExecuteReader();
             DataTable table = new DataTable();
-            table.Load(cmd.ExecuteReader());
+            table.Load(rdr);
             ds.Tables.Add(table);
             cmd.Connection.Close();
 

@@ -49,6 +49,11 @@ namespace AutomacaoMantisBT.Utils.NunitHelpers
             return TestContext.CurrentContext.Result.StackTrace;
         }
 
+        public static String GetExceptionMessageTest()
+        {
+            return TestContext.CurrentContext.Result.Message;
+        }
+
 
     }
 }

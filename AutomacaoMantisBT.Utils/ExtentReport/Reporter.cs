@@ -30,7 +30,7 @@ namespace AutomacaoMantisBT.Utils.ExtentReport
 
                 Utilities.CreateFolder(NunitTestHelpers.GetTestDirectoryName() + "\\" + reportFolderName);
                 Utilities.CreateFolder(NunitTestHelpers.GetTestDirectoryName() + "\\" + reportFolderName + "\\" + currentDate);
-                Utilities.CreateFolder(NunitTestHelpers.GetTestDirectoryName() + "\\" + reportFolderName + "\\" + currentDate + "\\"+ screenshotsFolder);
+                Utilities.CreateFolder(NunitTestHelpers.GetTestDirectoryName() + "\\" + reportFolderName + "\\" + currentDate + "\\" + screenshotsFolder);
 
                 var htmlReporter = new ExtentHtmlReporter(NunitTestHelpers.GetTestDirectoryName() + "\\" + reportFolderName + "\\" + currentDate + "\\" + fileName);
                 _extent = new ExtentReports();
@@ -52,7 +52,7 @@ namespace AutomacaoMantisBT.Utils.ExtentReport
         public static void AddTestInfo(string text)
         {
             _test.Log(Status.Info, text);
-           
+
 
 
         }
@@ -65,6 +65,9 @@ namespace AutomacaoMantisBT.Utils.ExtentReport
         public static void WriteTestStatus()
         {
             var status = NunitTestHelpers.GetTestStatus();
+            var exception = string.IsNullOrEmpty(NunitTestHelpers.GetExceptionMessageTest())
+                 ? ""
+                 : string.Format("{0}", "<pre>"+NunitTestHelpers.GetExceptionMessageTest()+"</pre>");
             var stacktrace = string.IsNullOrEmpty(NunitTestHelpers.GetStackTraceResultTest())
                     ? ""
                     : string.Format("{0}", NunitTestHelpers.GetStackTraceResultTest());
@@ -74,6 +77,7 @@ namespace AutomacaoMantisBT.Utils.ExtentReport
             {
                 case TestStatus.Failed:
                     logstatus = Status.Fail;
+                    
                     break;
                 case TestStatus.Inconclusive:
                     logstatus = Status.Warning;
@@ -86,7 +90,7 @@ namespace AutomacaoMantisBT.Utils.ExtentReport
                     break;
             }
 
-            _test.Log(logstatus, "Status do Teste: " + logstatus + "<pre>"+stacktrace+"</pre>");
+            _test.Log(logstatus, "Status do Teste: " + logstatus + "<br />" + exception + "<br />URL: " + SeleniumBase.WebdriverHooks.Driver.Url , AddScreenShot());
 
         }
         public static void AddStepStatus(string text)
@@ -99,14 +103,14 @@ namespace AutomacaoMantisBT.Utils.ExtentReport
 
         }
 
-        public static void AddScreenShot()
+        public static MediaEntityModelProvider AddScreenShot()
         {
-            
+
             string screenshotPath = TakeScreenshot.TakeScreenShotHelpers.TakeScreenshot(NunitTestHelpers.GetTestDirectoryName() + "\\" + reportFolderName + "\\" + currentDate + "\\" + screenshotsFolder + "\\");
 
             var mediaModel = MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotPath).Build();
-
-            _test.Log(GetTestStatus(), SeleniumBase.WebdriverHooks.Driver.Url, mediaModel);
+            return mediaModel;
+            //_test.Log(GetTestStatus(), SeleniumBase.WebdriverHooks.Driver.Url, mediaModel);
         }
 
         public static Status GetTestStatus()

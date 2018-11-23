@@ -47,16 +47,18 @@ namespace AutomacaoMantisBT.Utils.WaitHelpers
 
         public static void WaitForElementClickable(IWebElement element)
         {
-            try
-            {
-                wait = new WebDriverWait(WebdriverHooks.Driver, TimeSpan.FromSeconds(timeout));
-                element = wait.Until(ExpectedConditions.ElementToBeClickable(element));
-            }
-            catch (NoSuchElementException ex)
-            {
+            wait = new WebDriverWait(WebdriverHooks.Driver, TimeSpan.FromSeconds(timeout));
+            element = wait.Until(ExpectedConditions.ElementToBeClickable(element));
+            //try
+            //{
+            //    wait = new WebDriverWait(WebdriverHooks.Driver, TimeSpan.FromSeconds(timeout));
+            //    element = wait.Until(ExpectedConditions.ElementToBeClickable(element));
+            //}
+            //catch (NoSuchElementException ex)
+            //{
 
-                Assert.Fail("{0} No Such Element.", ex);
-            }
+            //    Assert.Fail("{0} No Such Element.", ex);
+            //}
 
         }
         public static void WaitForTextInElement(IWebElement element, string text)

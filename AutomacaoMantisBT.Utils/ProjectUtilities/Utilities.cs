@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -16,8 +17,14 @@ namespace AutomacaoMantisBT.Utils.ProjectUtilities
         {
             StackTrace st = new StackTrace();
             StackFrame sf = st.GetFrame(1);
-
+        
             return sf.GetMethod().Name;
+        }
+
+        public static StackTrace GetCurrentMethodByLevel()
+        {
+            StackTrace st = new StackTrace();
+            return st;
         }
 
         public static void CreateFolder(string folderName)

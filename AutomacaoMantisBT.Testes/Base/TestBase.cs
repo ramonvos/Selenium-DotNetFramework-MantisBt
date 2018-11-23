@@ -71,7 +71,7 @@ namespace AutomacaoMantisBT.Testes.Base
         {
 
             Reporter.WriteTestStatus();
-            Reporter.AddScreenShot();
+            //Reporter.AddScreenShot();
         }
 
         [OneTimeTearDown]

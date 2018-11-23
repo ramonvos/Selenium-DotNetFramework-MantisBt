@@ -46,16 +46,20 @@ namespace AutomacaoMantisBT.Utils.AssertsHelpers
 
         public static void AssertTextInElement(IWebElement element, string text)
         {
-            try
-            {
-                Assert.That(element.Text == text);
-                Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute() + " - Valor: "+ text);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail("{0} Text at element NOT EQUAL", ex);
 
-            }
+            WaitHelpers.WaitForElementHelpers.WaitForElementClickable(element);
+            Assert.That(element.Text == text);
+            Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute() + " - Valor: " + text);
+            //try
+            //{
+            //    Assert.That(element.Text == text);
+            //    Reporter.AddTestInfo(ProjectUtilities.Utilities.GetCurrentMethod() + " => " + "Elemento encontrado: " + element.GetElementAttribute() + " - Valor: "+ text);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Assert.Fail("{0} Text at element NOT EQUAL", ex);
+
+            //}
         }
 
         public static void AssertElementContainsText(IWebElement element, string text)
